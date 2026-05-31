@@ -495,7 +495,7 @@ function ModalVoir({ incident, onClose }) {
         {incident.photo_url && (
           <div style={{ marginBottom: 12 }}>
             <div style={{ fontSize: 11, color: '#718096', marginBottom: 4 }}>Photo de l'incident</div>
-            <img src={`http://localhost:5000/api${incident.photo_url}`} alt="Incident" style={{ maxWidth: '100%', maxHeight: 300, borderRadius: 8, border: '1px solid #E2E8F0' }} />
+            <img src={`${import.meta.env.VITE_API_URL || 'http://localhost:5000/api'}${incident.photo_url}`} alt="Incident" style={{ maxWidth: '100%', maxHeight: 300, borderRadius: 8, border: '1px solid #E2E8F0' }} />
           </div>
         )}
         <div style={{ display: 'flex', justifyContent: 'flex-end', marginTop: 16, gap: 10 }}>

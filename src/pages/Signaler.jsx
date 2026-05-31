@@ -777,7 +777,7 @@ export default function Signaler() {
               {uploading && <div style={{ fontSize: 12, color: '#2E75B6', marginTop: 4 }}>Envoi de la photo en cours...</div>}
               {photo && (
                 <div style={{ marginTop: 10 }}>
-                  <img src={`http://localhost:5000/api${photo}`} alt="Incident" style={{ maxHeight: 150, borderRadius: 8, border: '1px solid #E2E8F0' }} />
+                  <img src={`${import.meta.env.VITE_API_URL || 'http://localhost:5000/api'}${photo}`} alt="Incident" style={{ maxHeight: 150, borderRadius: 8, border: '1px solid #E2E8F0' }} />
                 </div>
               )}
             </div>
