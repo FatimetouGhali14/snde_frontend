@@ -202,10 +202,53 @@ textarea { resize: vertical; min-height: 80px; }
 
 /* Responsive */
 @media (max-width: 768px) {
-  .sidebar { width: 60px; }
-  .nav-item span { display: none; }
-  .main-content { margin-left: 60px; padding: 16px; }
+  /* Sidebar — cachée par défaut sur mobile, remplacée par barre du bas */
+  .sidebar {
+    width: 100%; height: 56px;
+    top: auto; bottom: 0; left: 0;
+    flex-direction: row; align-items: center;
+    border-top: 1px solid rgba(255,255,255,0.1);
+  }
+  .sidebar-logo { display: none; }
+  .sidebar-nav {
+    flex: 1; display: flex; flex-direction: row;
+    padding: 0; overflow-x: auto;
+  }
+  .nav-item {
+    flex-direction: column; gap: 2px; padding: 6px 10px;
+    font-size: 10px; flex: 1; justify-content: center; align-items: center;
+  }
+  .nav-item span { display: block; font-size: 10px; }
+  .nav-icon { font-size: 20px; width: auto; }
+  .sidebar-footer { display: none; }
+
+  /* Contenu principal — plus de marge gauche, padding en bas pour la barre */
+  .main-content { margin-left: 0; padding: 16px; padding-bottom: 72px; }
+
+  /* Grilles */
   .kpi-grid { grid-template-columns: 1fr 1fr; }
   .charts-grid { grid-template-columns: 1fr; }
   .form-grid { grid-template-columns: 1fr; }
+
+  /* Login */
+  .login-page { padding: 16px; align-items: flex-start; padding-top: 40px; }
+  .login-card { padding: 24px 20px; }
+
+  /* Modal */
+  .modal-overlay { align-items: flex-end; }
+  .modal {
+    max-width: 100%; border-radius: 14px 14px 0 0;
+    padding: 24px 16px; max-height: 92vh;
+  }
+
+  /* Tableau */
+  .table-wrap { font-size: 12px; }
+  thead th, tbody td { padding: 8px 8px; }
+
+  /* Filtres */
+  .filters-bar { gap: 8px; }
+  .filters-bar select, .filters-bar input { min-width: 120px; font-size: 12px; }
+
+  /* Boutons */
+  .btn { padding: 10px 14px; font-size: 13px; }
 }
